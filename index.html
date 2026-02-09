@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O Arauto Espiritual | Edição Independente</title>
+    <title>O Arauto Espiritual | Vol. 383</title>
     <!-- Importando fontes para dar o visual "Bleach" -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -363,20 +363,21 @@
             padding-bottom: 10px;
         }
 
-        .student-list {
+        .item-list {
             list-style: none;
         }
 
-        .student-list li {
-            padding: 10px;
+        .item-list li {
+            padding: 15px 10px;
             border-bottom: 1px dashed #999;
             display: flex;
             justify-content: space-between;
+            align-items: center;
         }
         
-        .student-rank {
+        .item-price {
             font-weight: bold;
-            margin-right: 15px;
+            color: var(--ichigo-orange);
         }
 
         /* Visual Noise Effect for that Ink Feel */
@@ -402,8 +403,8 @@
     <div class="container">
         <header>
             <div class="header-meta">
-                <span>VOL. 382</span>
-                <span>RUKONGAI LESTE</span>
+                <span>VOL. 383</span>
+                <span>RUKONGAI SUL</span>
                 <span id="current-date">DATA DE HOJE</span>
             </div>
             <h1 class="brand-title">O Arauto Espiritual</h1>
@@ -414,142 +415,94 @@
         <div class="grid-layout">
             <!-- MAIN CONTENT -->
             <main>
-                <!-- NOTÍCIA 1: ECONOMIA -->
+                <!-- NOTÍCIA 1: MISTÉRIO/CULTURA -->
                 <article class="article-block">
-                    <!-- SVG Image Replacement - ARTE VETORIAL ESTILO MANGÁ -->
+                    <!-- SVG Image - Flores de Luz -->
                     <div class="svg-container">
-                        <svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="display: block; width: 100%; height: auto; background: #ffffff;">
+                        <svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="display: block; width: 100%; height: auto; background: #050505;">
                             <defs>
-                                <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <radialGradient id="glowGrad" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
                                     <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#e0e0e0;stop-opacity:1" />
-                                </linearGradient>
-                                <filter id="glow">
-                                    <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
-                                    <feMerge>
-                                        <feMergeNode in="coloredBlur"/>
-                                        <feMergeNode in="SourceGraphic"/>
-                                    </feMerge>
-                                </filter>
+                                    <stop offset="20%" style="stop-color:#b3e5fc;stop-opacity:0.8" />
+                                    <stop offset="100%" style="stop-color:#0288d1;stop-opacity:0" />
+                                </radialGradient>
                             </defs>
 
-                            <!-- CÉU -->
-                            <rect width="800" height="450" fill="url(#skyGrad)"/>
-
-                            <!-- SOL POENTE (Estilo Bleach - Laranja Forte) -->
-                            <circle cx="650" cy="150" r="100" fill="#ff6600" opacity="0.9"/>
+                            <!-- Fundo Noturno -->
+                            <rect width="800" height="450" fill="#050505"/>
                             
-                            <!-- NUVENS ESTILIZADAS -->
-                            <path d="M-50 100 Q150 50 350 120 T750 100" fill="none" stroke="#dcdcdc" stroke-width="2"/>
-                            <path d="M50 180 Q250 140 450 190 T850 150" fill="none" stroke="#dcdcdc" stroke-width="2"/>
+                            <!-- Lua Crescente -->
+                            <path d="M700 80 A 40 40 0 1 0 700 160 A 30 30 0 1 1 700 80" fill="#fcfcfc" opacity="0.8"/>
 
-                            <!-- CAMADA DE FUNDO (Cinza - Construções distantes) -->
-                            <path d="M0 450 V300 L50 280 L100 300 V450 M120 450 V290 L180 260 L240 290 V450 M600 450 V280 L700 240 L800 280 V450" fill="#dcdcdc"/>
+                            <!-- Grama Silhueta -->
+                            <path d="M0 450 L0 350 Q100 320 200 350 T400 340 T600 360 T800 330 V450 Z" fill="#111"/>
 
-                            <!-- CAMADA MÉDIA (Preto - Edifícios Tradicionais) -->
-                            <!-- Prédio Esquerda -->
-                            <path d="M-20 450 V200 L120 160 L260 200 V450 Z" fill="#050505"/>
-                            <!-- Telhado Esquerda -->
-                            <path d="M-40 200 Q120 140 280 200 L270 215 Q120 160 -40 215 Z" fill="#050505"/>
-                            
-                            <!-- Prédio Direita -->
-                            <path d="M540 450 V180 L680 140 L820 180 V450 Z" fill="#050505"/>
-                            <!-- Telhado Direita -->
-                            <path d="M520 180 Q680 120 840 180 L830 195 Q680 140 520 195 Z" fill="#050505"/>
+                            <!-- Flores Brilhantes -->
+                            <g>
+                                <!-- Flor 1 -->
+                                <circle cx="150" cy="350" r="15" fill="url(#glowGrad)"/>
+                                <path d="M150 350 Q160 380 150 450" stroke="#333" stroke-width="2" fill="none"/>
+                                
+                                <!-- Flor 2 -->
+                                <circle cx="250" cy="380" r="10" fill="url(#glowGrad)"/>
+                                <path d="M250 380 Q240 400 250 450" stroke="#333" stroke-width="2" fill="none"/>
 
-                            <!-- FIOS E LANTERNAS -->
-                            <path d="M0 180 Q400 350 800 160" stroke="#050505" stroke-width="3" fill="none"/>
-                            
-                            <!-- Lanternas Penduradas -->
-                            <g filter="url(#glow)">
-                                <!-- Lanterna 1 -->
-                                <line x1="200" y1="245" x2="200" y2="265" stroke="#050505" stroke-width="2"/>
-                                <rect x="180" y="265" width="40" height="55" rx="4" fill="#ff6600"/>
-                                <rect x="185" y="260" width="30" height="5" fill="#050505"/> <!-- Topo -->
-                                <rect x="185" y="315" width="30" height="5" fill="#050505"/> <!-- Base -->
-                                <text x="200" y="300" font-family="serif" font-size="24" fill="#050505" text-anchor="middle" font-weight="bold">北</text> <!-- Norte -->
+                                <!-- Flor 3 -->
+                                <circle cx="400" cy="320" r="20" fill="url(#glowGrad)"/>
+                                <path d="M400 320 Q420 380 400 450" stroke="#333" stroke-width="2" fill="none"/>
 
-                                <!-- Lanterna 2 (Centro) -->
-                                <line x1="400" y1="265" x2="400" y2="285" stroke="#050505" stroke-width="2"/>
-                                <rect x="380" y="285" width="40" height="55" rx="4" fill="#ff6600"/>
-                                <rect x="385" y="280" width="30" height="5" fill="#050505"/>
-                                <rect x="385" y="335" width="30" height="5" fill="#050505"/>
-                                <text x="400" y="320" font-family="serif" font-size="24" fill="#050505" text-anchor="middle" font-weight="bold">市</text> <!-- Mercado -->
-
-                                <!-- Lanterna 3 -->
-                                <line x1="600" y1="225" x2="600" y2="245" stroke="#050505" stroke-width="2"/>
-                                <rect x="580" y="245" width="40" height="55" rx="4" fill="#ff6600"/>
-                                <rect x="585" y="240" width="30" height="5" fill="#050505"/>
-                                <rect x="585" y="295" width="30" height="5" fill="#050505"/>
-                                <text x="600" y="280" font-family="serif" font-size="24" fill="#050505" text-anchor="middle" font-weight="bold">魂</text> <!-- Alma -->
+                                <!-- Flor 4 -->
+                                <circle cx="600" cy="360" r="12" fill="url(#glowGrad)"/>
+                                <path d="M600 360 Q580 400 600 450" stroke="#333" stroke-width="2" fill="none"/>
+                                
+                                <!-- Partículas Flutuantes -->
+                                <circle cx="160" cy="320" r="2" fill="#b3e5fc" opacity="0.6"/>
+                                <circle cx="420" cy="280" r="3" fill="#b3e5fc" opacity="0.6"/>
+                                <circle cx="620" cy="330" r="2" fill="#b3e5fc" opacity="0.6"/>
                             </g>
 
-                            <!-- MULTIDÃO / SILHUETAS (Primeiro Plano) -->
-                            <path d="M0 450 L0 380 Q100 350 200 380 T400 370 T600 380 T800 360 V450 Z" fill="#050505"/>
+                            <!-- Observadores (Silhuetas) -->
+                            <path d="M500 450 L500 380 Q520 360 540 380 L540 450" fill="#000"/>
+                            <circle cx="520" cy="370" r="10" fill="#000"/>
                             
-                            <!-- Detalhes da Multidão (Cabeças) -->
-                            <circle cx="150" cy="370" r="15" fill="#050505"/>
-                            <circle cx="280" cy="375" r="12" fill="#050505"/>
-                            <circle cx="450" cy="360" r="18" fill="#050505"/>
-                            <circle cx="650" cy="370" r="20" fill="#050505"/>
-                            
-                            <!-- BANDEIRAS VERTICAIS (Nobori) -->
-                            <g transform="translate(80, 280)">
-                                <rect x="0" y="0" width="40" height="120" fill="#050505"/>
-                                <text x="20" y="60" font-family="serif" font-size="24" fill="#fcfcfc" text-anchor="middle" writing-mode="tb" font-weight="bold">繁栄</text>
-                            </g>
-                            
-                            <g transform="translate(700, 260)">
-                                <rect x="0" y="0" width="40" height="140" fill="#050505"/>
-                                <text x="20" y="70" font-family="serif" font-size="24" fill="#fcfcfc" text-anchor="middle" writing-mode="tb" font-weight="bold">自由</text>
-                            </g>
+                            <path d="M300 450 L300 390 Q320 370 340 390 L340 450" fill="#000"/>
+                            <circle cx="320" cy="380" r="10" fill="#000"/>
 
-                            <!-- PÉTALAS/PAPÉIS VOANDO (Atmosfera) -->
-                            <g fill="#ff6600" opacity="0.7">
-                                <circle cx="300" cy="200" r="3"/>
-                                <circle cx="320" cy="180" r="2"/>
-                                <circle cx="500" cy="220" r="4"/>
-                                <circle cx="550" cy="150" r="3"/>
-                                <circle cx="100" cy="100" r="5"/>
-                            </g>
-
-                            <!-- Moldura Interna Fina -->
-                            <rect x="10" y="10" width="780" height="430" fill="none" stroke="#050505" stroke-width="2"/>
                         </svg>
-                        <div style="position: absolute; bottom: 10px; right: 10px; background: var(--bleach-black); color: white; padding: 2px 8px; font-size: 0.8rem; font-family: var(--header-font); border: 1px solid white;">FIG A. O NOVO MERCADO DE JUNRINAN</div>
+                        <div style="position: absolute; bottom: 10px; right: 10px; background: var(--bleach-black); color: white; padding: 2px 8px; font-size: 0.8rem; font-family: var(--header-font); border: 1px solid white;">FIG B. FENÔMENO NO DISTRITO 45</div>
                     </div>
                     
                     <div class="article-meta">
                         <span class="diamond"></span>
-                        <span>Por <strong>Correspondente Econômico</strong></span>
-                        <span>Rukongai Norte</span>
+                        <span>Por <strong>Observador Noturno</strong></span>
+                        <span>Distrito 45</span>
                     </div>
-                    <h2 class="article-title">O MILAGRE DO NORTE: ECONOMIA DE RUKONGAI DISPARA SEM AJUDA DA CORTE</h2>
+                    <h2 class="article-title">O MISTÉRIO DAS FLORES DE LUZ: BELEZA QUE UNE NOBRES E PLEBEUS</h2>
                     <p>
-                        <span class="first-letter">C</span>ontrariando todas as expectativas da Central 46, os distritos do Norte de Rukongai estão a vivenciar um renascimento econômico sem precedentes. Longe de depender das "migalhas" do orçamento do Seireitei, comerciantes locais estabeleceram novas rotas de comércio de tecidos espirituais e produtos agrícolas que conectam os distritos 1 ao 20.
+                        <span class="first-letter">U</span>m fenômeno raro está a transformar as noites do Distrito 45. Pequenas flores que emitem uma luz azulada pulsante brotaram repentinamente nas colinas de Sekimoto, atraindo curiosos de todas as partes de Rukongai e até mesmo alguns oficiais de folga do Seireitei.
                     </p>
                     <br>
                     <p>
-                        "Disseram-nos que sem a supervisão dos Ceifeiros de Almas, passaríamos fome," comenta Sra. Haru, matriarca de uma cooperativa de tecelões em Junrinan. "Mas a verdade é que, quando nos organizamos entre nós, a prosperidade é para todos, não apenas para os nobres." O fluxo de Kan nas ruas triplicou no último trimestre, permitindo reformas em habitações que estavam em ruínas há séculos. Este fenômeno de autossuficiência está a inspirar outros distritos a cortarem a dependência das grandes casas nobres.
+                        O mais curioso não é apenas a luz, mas o som. Quando o vento sopra do leste, as pétalas produzem uma melodia suave, semelhante a sinos de vidro. "Nunca vi nada igual em 200 anos," diz vovó Yuna, moradora local. Em vez de medo, o evento trouxe um clima de celebração improvisada, com famílias fazendo piqueniques noturnos sob o brilho etéreo. Por enquanto, a 12ª Divisão apenas observa à distância, permitindo que a magia do momento permaneça intocada pela burocracia.
                     </p>
                 </article>
 
                 <hr style="border: 0; border-top: 4px solid var(--bleach-black); margin: 40px 0;">
 
-                <!-- NOTÍCIA 2: NOBREZA (POSITIVA/LEGAL) -->
+                <!-- NOTÍCIA 2: MUDANÇA (CULTURA RUKONGAI) -->
                 <article class="article-block">
                     <div class="article-meta">
                         <span class="diamond"></span>
-                        <span>Cultura & Artes</span>
-                        <span>Mansão Kuchiki</span>
+                        <span>Lazer & Tradição</span>
+                        <span>Distrito 1</span>
                     </div>
-                    <h2 class="article-title secondary">UM GESTO INÉDITO: CLÃ KUCHIKI ABRE JARDINS PARA O POVO</h2>
+                    <h2 class="article-title secondary">FESTIVAL DE PIPAS COLORE O CÉU DE JUNRINAN</h2>
                     <p>
-                        Numa manhã histórica para a Sociedade das Almas, os pesados portões da Mansão Kuchiki não se abriram para a saída de um batalhão, mas para a entrada de artistas de todo o Rukongai. Pela primeira vez em milênios, o chefe do clã autorizou a realização do "Festival da Cerejeira Branca" dentro dos seus domínios privados.
+                        O céu sobre o Distrito 1 ficou pequeno ontem à tarde. O tradicional torneio de pipas artesanais reuniu centenas de famílias nas colinas verdes, longe dos muros de pedra. Sem uniformes, patentes ou hierarquias, apenas papel, bambu e a habilidade de controlar o vento.
                     </p>
                     <br>
                     <p>
-                        "A beleza não deve ser prisioneira de muros altos," declarou um representante da família. O evento permitiu que crianças do Distrito 78 vissem carpas douradas e provassem doces refinados que antes eram exclusivos da elite. Rumores dizem que o próprio Capitão Byakuya foi visto, de longe, apreciando uma pintura feita por um jovem plebeu. É um momento raro de união onde a arte provou ser mais forte que a hierarquia espiritual.
+                        O destaque do dia foi uma pipa gigante em forma de carpa dourada, criada por um grupo de crianças locais, que dançou entre as nuvens por horas. "Aqui em cima, todos somos livres para voar," disse o artesão mais velho da vila, enquanto ensinava os mais jovens a dar os nós corretos na linha. O evento terminou com um espetáculo de cores ao pôr do sol, lembrando a todos que a alegria simples é o maior tesouro de Rukongai.
                     </p>
                 </article>
 
@@ -560,19 +513,19 @@
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                         <div>
                             <div class="category-tag">Academia</div>
-                            <h4 style="font-family: var(--header-font); font-size: 1.4rem; margin: 10px 0;">Aprovados da 2066ª Turma Convocados!</h4>
-                            <p style="font-size: 0.9rem;">O resultado final já está disponível e os novos aspirantes devem apresentar-se. O início das aulas está confirmado para o dia <strong>06/02</strong>.</p>
+                            <h4 style="font-family: var(--header-font); font-size: 1.4rem; margin: 10px 0;">Novos Talentos na Cozinha?</h4>
+                            <p style="font-size: 0.9rem;">A cantina da Academia Shinō introduziu um novo prato: "Bolinho de Arroz Espiritual Apimentado". A receita, criada por uma aluna do primeiro ano, está causando filas quilométricas (e alguns pedidos de água urgentes).</p>
+                        </div>
+                        <div>
+                            <div class="category-tag">Evento</div>
+                            <h4 style="font-family: var(--header-font); font-size: 1.4rem; margin: 10px 0;">Grande Feira de Trocas do Oeste</h4>
+                            <p style="font-size: 0.9rem;">O Distrito 3 vai sediar neste fim de semana uma feira onde o Kan não tem valor. A regra é simples: troque algo que você tem por algo que você precisa. Desde antiguidades até serviços de limpeza de Zampakutou.</p>
                             <p style="margin-top: 10px;">
                                 <!-- Link que abre o modal -->
                                 <a id="open-list-btn" class="link-destaque">
-                                    ACESSAR A LISTA DE APROVADOS &rarr;
+                                    VER CATÁLOGO DE ITENS RAROS &rarr;
                                 </a>
                             </p>
-                        </div>
-                        <div>
-                            <div class="category-tag">Rukongai Oeste</div>
-                            <h4 style="font-family: var(--header-font); font-size: 1.4rem; margin: 10px 0;">Festa do Povo no Oeste</h4>
-                            <p style="font-size: 0.9rem;">O Festival das Lanternas deste ano será organizado 100% pelos moradores. Nada de áreas VIP ou assentos reservados para a nobreza. É uma celebração da nossa cultura, com comida de rua autêntica e música tradicional feita por nós, para nós.</p>
                         </div>
                     </div>
                 </div>
@@ -580,39 +533,44 @@
                 <div class="editorial-section">
                     <h3 style="font-family: var(--header-font); text-transform: uppercase; border-left: 5px solid var(--ichigo-orange); padding-left: 15px;">Reflexão do Mês</h3>
                     <blockquote style="font-style: italic; margin: 20px; font-size: 1.2rem; text-align: center; border-left: none;">
-                        "A flor que floresce na adversidade é a mais rara e bela de todas. O Rukongai é esse jardim, e nós somos os jardineiros esquecidos."
+                        "Mesmo a espada mais afiada precisa descansar na bainha. A paz não é a ausência de conflito, mas a sabedoria de saber quando rir ao invés de lutar."
                         <br><br>
-                        <small>- Poeta Anônimo do Distrito 78</small>
+                        <small>- Provérbio Antigo de Rukongai</small>
                     </blockquote>
                 </div>
             </main>
 
             <!-- SIDEBAR -->
             <aside>
-                <!-- Coluna da Matsumoto -->
+                <!-- Boatos Leves -->
                 <div class="sidebar-section">
-                    <h3 class="sidebar-title">Vozes da Rua</h3>
-                    <p style="margin-bottom: 10px;"><strong>Mercado Negro em Alta?</strong></p>
-                    <p>Com a prosperidade do Norte, itens raros do Mundo Humano começaram a aparecer nas bancas. Dizem que um certo lojista de chapéu listrado tem algo a ver com isso...</p>
+                    <h3 class="sidebar-title">Boatos da Taberna</h3>
+                    <p style="margin-bottom: 10px;"><strong>O Mistério dos Doces Sumidos</strong></p>
+                    <p>Membros da Associação de Comerciantes estão intrigados. Todo o estoque de manju desapareceu do armazém principal. Testemunhas viram uma pequena silhueta veloz correndo pelos telhados com uma trouxa gigante. Será um espírito travesso?</p>
                 </div>
 
-                <!-- Horóscopo -->
+                <!-- Previsão Espiritual (Horóscopo MUDADO) -->
                 <div class="sidebar-section">
                     <h3 class="sidebar-title">Previsão Espiritual</h3>
                     <ul class="news-list">
                         <li class="news-item">
-                            <h4>Capricórnio</h4>
-                            <p style="font-size: 0.8rem;">Trabalho duro recompensado. O seu esforço na colheita será notado pelos vizinhos.</p>
+                            <h4>Touro</h4>
+                            <p style="font-size: 0.8rem;">Dia ideal para apreciar a culinária local. Evite esforços desnecessários e valorize o conforto do lar.</p>
                         </li>
                         <li class="news-item">
-                            <h4>Leão</h4>
-                            <p style="font-size: 0.8rem;">Dia propício para negociações. Não aceite a primeira oferta de um Ceifeiro de Almas.</p>
+                            <h4>Escorpião</h4>
+                            <p style="font-size: 0.8rem;">Sua intuição está afiada. Você descobrirá um segredo hoje, provavelmente o ingrediente oculto da sopa do vizinho.</p>
                         </li>
                         <li class="news-item">
-                            <h4>Peixes</h4>
-                            <p style="font-size: 0.8rem;">A sua intuição está afiada. Se sentir que deve evitar a rua principal, evite.</p>
+                            <h4>Gêmeos</h4>
+                            <p style="font-size: 0.8rem;">A comunicação flui bem. Ótimo momento para negociar preços no mercado ou contar histórias para as crianças.</p>
                         </li>
                     </ul>
+                </div>
+                
+                <div style="background: var(--bleach-black); color: white; padding: 20px; text-align: center; margin-top: 20px;">
+                    <h4 style="font-family: var(--header-font); text-transform: uppercase; color: var(--ichigo-orange);">Utilidade Pública</h4>
+                    <p style="font-size: 0.8rem; margin-top: 10px;">Procura-se: Gato preto de três caudas (espírito guardião doméstico). Atende por "Yoru". Se visto, favor avisar a Casa de Chá da Sra. Haru. Recompensa em bolinhos.</p>
                 </div>
             </aside>
         </div>
@@ -623,56 +581,67 @@
             <div class="footer-col">
                 <div class="squad-symbol">真</div>
                 <h3>Sobre Nós</h3>
-                <p>O Arauto Espiritual é uma publicação independente, operando fora da jurisdição do Seireitei. Nós trazemos as histórias que a Nobreza prefere ignorar.</p>
+                <p>O Arauto Espiritual: Celebrando a vida, a cultura e as pequenas alegrias da Sociedade das Almas.</p>
             </div>
             <div class="footer-col">
                 <h3>Arquivo Público</h3>
                 <ul class="news-list" style="border: none;">
-                    <li><a href="#">Denúncias Anônimas</a></li>
-                    <li><a href="#">Mapa de Zonas Livres</a></li>
-                    <li><a href="#">Guia de Sobrevivência</a></li>
+                    <li><a href="#">Enviar História Positiva</a></li>
+                    <li><a href="#">Calendário de Festivais</a></li>
+                    <li><a href="#">Receitas Locais</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h3>Apoie a Verdade</h3>
-                <p>Nós não recebemos fundos da Corte. A sua contribuição mantém os nossos informantes vivos.</p>
-                <a href="#" class="donate-btn" onclick="alert('Obrigado pelo seu apoio à imprensa livre! (Simulação)'); return false;">
+                <h3>Apoie a Cultura</h3>
+                <p>Ajude-nos a manter as tradições vivas. Sua contribuição patrocina o próximo festival.</p>
+                <a href="#" class="donate-btn" onclick="alert('Obrigado! Sua contribuição ajudará a comprar mais tinta para o jornal. (Simulação)'); return false;">
                     DOAR KAN &rarr;
                 </a>
             </div>
         </div>
         <div style="text-align: center; margin-top: 40px; font-size: 0.8rem; opacity: 0.6;">
-            &copy; Imprensa Livre de Rukongai. A Verdade acima da Autoridade. Sem afiliação com o Gotei 13.
+            &copy; Imprensa Livre de Rukongai. Conectando almas através das palavras.
         </div>
     </footer>
 
-    <!-- MODAL DA LISTA DE APROVADOS -->
+    <!-- MODAL DE ITENS RAROS -->
     <div id="modal-lista" class="modal-overlay">
         <div class="modal-content">
             <button class="close-modal" id="close-list-btn">&times;</button>
             <div class="list-header">
-                <h2>ACADEMIA SHINŌ</h2>
-                <p>TURMA 2066 - RESULTADOS OFICIAIS</p>
+                <h2>FEIRA DE TROCAS DO OESTE</h2>
+                <p>CATÁLOGO PRELIMINAR DE ITENS E CURIOSIDADES</p>
             </div>
-            <p style="margin-bottom: 20px; font-size: 0.8rem;">OS SEGUINTES CANDIDATOS DEVEM APRESENTAR-SE NO PORTÃO OESTE NO DIA 06/02.</p>
             
-            <ul class="student-list">
-                <li><span class="student-rank">001.</span> Mizuki Yukihira</li>
-                <li><span class="student-rank">002.</span> Duque Iguro</li>
-                <li><span class="student-rank">003.</span> Sesshomaru</li>
-                <li><span class="student-rank">004.</span> Kagura Shihōin</li>
-                <li><span class="student-rank">005.</span> Shiryu Iguro</li>
-                <li><span class="student-rank">006.</span> Nagisa Kurogane</li>
-                <li><span class="student-rank">007.</span> Haruto Aizawa</li>
-                <li><span class="student-rank">008.</span> Miko Tsukishiro</li>
-                <li><span class="student-rank">009.</span> Renjiro Kameda</li>
-                <li><span class="student-rank">010.</span> Rumiko Kanzaki</li>
-                <li><span class="student-rank">011.</span> Sayuri Morimoto</li>
-                <li style="justify-content: center; margin-top: 10px; border: none;">...</li>
+            <ul class="item-list">
+                <li>
+                    <span>Sandálias de Palha Reforçadas (Par)</span>
+                    <span class="item-price">Troca: 2 sacos de arroz</span>
+                </li>
+                <li>
+                    <span>Pincel de Caligrafia (Cerdas de Javali)</span>
+                    <span class="item-price">Troca: Poema original</span>
+                </li>
+                <li>
+                    <span>Coleção de Óculos Escuros (Estilo "Renji")</span>
+                    <span class="item-price">Troca: Faixa de cabelo</span>
+                </li>
+                <li>
+                    <span>Kit de Limpeza de Zampakutou (Usado)</span>
+                    <span class="item-price">Troca: Ajuda na colheita</span>
+                </li>
+                <li>
+                    <span>Boneco "Chappy" (Edição Limitada)</span>
+                    <span class="item-price">Troca: A negociar (Item Raro!)</span>
+                </li>
+                <li>
+                    <span>Receita Secreta de Bolinhos</span>
+                    <span class="item-price">Troca: Segredo equivalente</span>
+                </li>
             </ul>
             
-            <div style="margin-top: 20px; border-top: 2px solid black; padding-top: 10px; text-align: center;">
-                <p style="font-weight: bold; color: var(--ichigo-orange);">TOTAL APROVADOS: 250</p>
+            <div style="margin-top: 20px; border-top: 2px solid black; padding-top: 10px; font-size: 0.8rem;">
+                <p><strong>LOCAL:</strong> Praça Central do Distrito 3. Venha cedo para as melhores trocas!</p>
             </div>
         </div>
     </div>
@@ -690,14 +659,18 @@
             const openBtn = document.getElementById('open-list-btn');
             const closeBtn = document.getElementById('close-list-btn');
 
-            openBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                modal.classList.add('active');
-            });
+            if(openBtn) {
+                openBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    modal.classList.add('active');
+                });
+            }
 
-            closeBtn.addEventListener('click', () => {
-                modal.classList.remove('active');
-            });
+            if(closeBtn) {
+                closeBtn.addEventListener('click', () => {
+                    modal.classList.remove('active');
+                });
+            }
 
             // Fechar ao clicar fora da janela
             modal.addEventListener('click', (e) => {
