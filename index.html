@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Arauto Espiritual | Vol. 384</title>
+    <!-- Importando fontes para dar o visual "Bleach" -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Sans+JP:wght@400;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --bleach-black: #050505;
+            --bleach-white: #fcfcfc;
+            --bleach-gray: #dcdcdc;
+            --ichigo-orange: #ff6600; /* Cor de destaque */
+            --header-font: 'Oswald', sans-serif;
+            --body-font: 'Playfair Display', serif;
+            --japanese-font: 'Noto Sans JP', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bleach-white);
+            color: var(--bleach-black);
+            font-family: var(--body-font);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+            border-bottom: 1px dotted var(--ichigo-orange);
+            cursor: pointer;
+        }
+
+        a:hover {
+            color: var(--ichigo-orange);
+            border-bottom: 1px solid var(--ichigo-orange);
+        }
+
+        /* --- UTILITY CLASSES --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .border-top { border-top: 4px solid var(--bleach-black); }
+        .border-bottom { border-bottom: 4px solid var(--bleach-black); }
+        .bg-black { background-color: var(--bleach-black); color: var(--bleach-white); }
+        .text-uppercase { text-transform: uppercase; }
+        
+        .japanese-text {
+            font-family: var(--japanese-font);
+            font-weight: 900;
+            opacity: 0.2;
+            position: absolute;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* --- HEADER --- */
+        header {
+            padding: 40px 0 20px;
+            text-align: center;
+            position: relative;
+            border-bottom: 4px solid var(--bleach-black);
+            margin-bottom: 40px;
+        }
+
+        .header-meta {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 2px solid var(--bleach-black);
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+            font-family: var(--header-font);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .brand-title {
+            font-family: var(--header-font);
+            font-size: 4rem;
+            font-weight: 700;
+            letter-spacing: -2px;
+            line-height: 1;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .brand-subtitle {
+            font-family: var(--japanese-font);
+            font-size: 1.5rem;
+            letter-spacing: 10px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* --- MAIN LAYOUT (GRID) --- */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+            .brand-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* --- ARTICLES --- */
+        .article-block {
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        /* Container de SVG melhorado */
+        .svg-container {
+            width: 100%;
+            border: 4px solid var(--bleach-black);
+            margin-bottom: 15px;
+            position: relative;
+            background: #fff;
+            overflow: hidden;
+            box-shadow: 5px 5px 0px rgba(0,0,0,0.1);
+        }
+
+        .article-title {
+            font-family: var(--header-font);
+            font-size: 2.8rem;
+            line-height: 1.1;
+            margin: 15px 0;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        
+        .article-title.secondary {
+            font-size: 2.2rem;
+        }
+
+        .article-meta {
+            font-style: italic;
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .diamond {
+            width: 8px;
+            height: 8px;
+            background-color: var(--ichigo-orange);
+            transform: rotate(45deg);
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        .first-letter {
+            float: left;
+            font-family: var(--header-font);
+            font-size: 3.5rem;
+            line-height: 0.8;
+            padding-right: 10px;
+            padding-top: 5px;
+            font-weight: 700;
+            color: var(--ichigo-orange);
+        }
+
+        /* --- SIDEBAR --- */
+        .sidebar-section {
+            border: 2px solid var(--bleach-black);
+            padding: 20px;
+            margin-bottom: 30px;
+            position: relative;
+            box-shadow: 8px 8px 0px var(--bleach-black);
+        }
+
+        .sidebar-title {
+            background: var(--bleach-black);
+            color: var(--bleach-white);
+            padding: 10px;
+            text-align: center;
+            font-family: var(--header-font);
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            margin: -20px -20px 20px -20px;
+            border-bottom: 2px solid var(--bleach-black);
+        }
+
+        /* --- LISTS --- */
+        .news-list {
+            list-style: none;
+        }
+
+        .news-item {
+            border-bottom: 1px dashed #999;
+            padding: 15px 0;
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+        }
+
+        .news-item h4 {
+            font-family: var(--header-font);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .category-tag {
+            background-color: var(--ichigo-orange);
+            color: white;
+            padding: 2px 6px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            font-family: var(--header-font);
+            margin-right: 5px;
+        }
+        
+        .link-destaque {
+            color: var(--ichigo-orange);
+            font-weight: bold;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--ichigo-orange);
+            cursor: pointer;
+        }
+        
+        .link-destaque:hover {
+            background-color: var(--ichigo-orange);
+            color: white;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--bleach-black);
+            color: var(--bleach-white);
+            padding: 40px 0;
+            margin-top: 60px;
+            border-top: 10px solid var(--ichigo-orange);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h3 {
+            font-family: var(--header-font);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+
+        .squad-symbol {
+            font-size: 3rem;
+            font-family: var(--japanese-font);
+            border: 2px solid white;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        
+        .donate-btn {
+            display: inline-block;
+            margin-top: 15px; 
+            border: 1px solid white; 
+            padding: 10px 20px; 
+            color: white;
+            font-family: var(--header-font);
+            text-transform: uppercase;
+            text-decoration: none;
+            border-bottom: none;
+        }
+        
+        .donate-btn:hover {
+            background-color: var(--ichigo-orange);
+            border-color: var(--ichigo-orange);
+            color: white;
+        }
+
+        /* --- MODAL (JANELA) --- */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(5, 5, 5, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background-color: var(--bleach-white);
+            padding: 40px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            border: 4px solid var(--bleach-black);
+            box-shadow: 15px 15px 0px var(--ichigo-orange);
+            position: relative;
+            font-family: 'Courier New', monospace;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            color: var(--bleach-black);
+            border: none;
+            background: none;
+        }
+
+        .close-modal:hover {
+            color: var(--ichigo-orange);
+        }
+
+        .list-header {
+            font-family: var(--header-font);
+            border-bottom: 4px solid var(--bleach-black);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+        }
+
+        .item-list {
+            list-style: none;
+        }
+
+        .item-list li {
+            padding: 15px 10px;
+            border-bottom: 1px dashed #999;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .item-status {
+            font-weight: bold;
+            color: #5cb85c;
+        }
+
+        /* Visual Noise Effect for that Ink Feel */
+        .ink-splatter {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: var(--bleach-black);
+            clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+            opacity: 0.05;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Ink effects background -->
+    <div class="ink-splatter" style="top: 100px; left: 50px; transform: scale(2) rotate(15deg);"></div>
+    <div class="ink-splatter" style="top: 600px; right: 50px; transform: scale(1.5) rotate(-10deg);"></div>
+
+    <div class="container">
+        <header>
+            <div class="header-meta">
+                <span>VOL. 384</span>
+                <span>RUKONGAI NORTE</span>
+                <span id="current-date">DATA DE HOJE</span>
+            </div>
+            <h1 class="brand-title">O Arauto Espiritual</h1>
+            <span class="brand-subtitle">霊的先駆者</span>
+            <div class="japanese-text" style="top: 20px; left: 50%; transform: translateX(-50%); font-size: 8rem;">霊魂</div>
+        </header>
+
+        <div class="grid-layout">
+            <!-- MAIN CONTENT -->
+            <main>
+                <!-- NOTÍCIA 1: ATAQUE NO NORTE -->
+                <article class="article-block">
+                    <!-- SVG Image - Ataque e Defesa -->
+                    <div class="svg-container">
+                        <svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="display: block; width: 100%; height: auto; background: #0a0a0a;">
+                            <defs>
+                                <radialGradient id="fireGrad" cx="50%" cy="80%" r="70%">
+                                    <stop offset="0%" style="stop-color:#ff6600;stop-opacity:0.8" />
+                                    <stop offset="50%" style="stop-color:#d84315;stop-opacity:0.5" />
+                                    <stop offset="100%" style="stop-color:#0a0a0a;stop-opacity:1" />
+                                </radialGradient>
+                                <filter id="smokeBlur">
+                                    <feGaussianBlur stdDeviation="8" result="blur"/>
+                                </filter>
+                            </defs>
+
+                            <!-- Céu noturno com brilho de fogo -->
+                            <rect width="800" height="450" fill="url(#fireGrad)"/>
+
+                            <!-- Fumaça -->
+                            <path d="M-50 450 Q200 100 400 250 T850 50" stroke="#1a1a1a" stroke-width="80" fill="none" filter="url(#smokeBlur)" opacity="0.6"/>
+                            <path d="M100 450 Q300 200 500 300 T900 150" stroke="#333" stroke-width="60" fill="none" filter="url(#smokeBlur)" opacity="0.4"/>
+
+                            <!-- Edifícios Destruídos (Fundo) -->
+                            <path d="M0 450 L0 300 L50 280 L70 320 L120 250 L180 290 L220 240 L300 300 L350 220 L420 290 L500 250 L580 310 L650 220 L720 280 L800 240 L800 450 Z" fill="#111"/>
+
+                            <!-- Chamas Pequenas -->
+                            <path d="M100 280 Q110 250 120 280 Z" fill="#ff6600"/>
+                            <path d="M320 290 Q330 240 340 290 Z" fill="#ff6600"/>
+                            <path d="M680 260 Q690 220 700 260 Z" fill="#ff6600"/>
+
+                            <!-- Defensores em Silhueta (Primeiro Plano) -->
+                            <path d="M0 450 L0 380 Q100 360 200 380 T400 370 T600 380 T800 360 V450 Z" fill="#000"/>
+                            
+                            <!-- Samurai 1 (Nobres Menores) -->
+                            <path d="M250 380 L240 320 Q250 290 260 320 L270 380 Z" fill="#000"/>
+                            <circle cx="255" cy="285" r="12" fill="#000"/>
+                            <path d="M250 330 L200 350" stroke="#000" stroke-width="4"/> <!-- Espada -->
+
+                            <!-- Samurai 2 -->
+                            <path d="M500 370 L480 300 Q500 270 520 300 L520 370 Z" fill="#000"/>
+                            <circle cx="500" cy="265" r="14" fill="#000"/>
+                            <path d="M490 310 L430 280" stroke="#000" stroke-width="3"/> <!-- Espada Levantada -->
+                            
+                            <!-- Capa Voando -->
+                            <path d="M515 290 Q560 280 580 320 Q550 340 515 330 Z" fill="#000"/>
+
+                            <!-- Destroços em primeiro plano -->
+                            <rect x="100" y="400" width="40" height="15" fill="#111" transform="rotate(20 100 400)"/>
+                            <rect x="650" y="390" width="60" height="20" fill="#111" transform="rotate(-15 650 390)"/>
+
+                        </svg>
+                        <div style="position: absolute; bottom: 10px; right: 10px; background: var(--bleach-black); color: white; padding: 2px 8px; font-size: 0.8rem; font-family: var(--header-font); border: 1px solid white;">FIG A. INCIDENTE NO DISTRITO 12 (NORTE)</div>
+                    </div>
+                    
+                    <div class="article-meta">
+                        <span class="diamond"></span>
+                        <span>Por <strong>Repórter de Linha de Frente</strong></span>
+                        <span>Distrito 12</span>
+                    </div>
+                    <h2 class="article-title">ATAQUE NOTURNO NO NORTE: NOBREZA MENOR PROTEGE O POVO</h2>
+                    <p>
+                        <span class="first-letter">O</span> caos tomou conta do Distrito 12 na noite de ontem, quando um grupo de agressores ainda não identificados iniciou um ataque surpresa. Explosões de pressão espiritual destruíram parte do mercado local e diversas moradias antes que qualquer alarme oficial pudesse soar.
+                    </p>
+                    <br>
+                    <p>
+                        O que parecia ser o prelúdio de uma tragédia, no entanto, mudou de rumo de forma inesperada. Diante da ausência imediata das patrulhas regulares, membros de famílias nobres menores — que residem nos limites entre o Seireitei e o Rukongai — intervieram prontamente. Empunhando suas espadas, esses guerreiros formaram uma barricada humana, evacuando civis feridos e repelindo os agressores para as florestas escuras. "Eles não usavam os mantos tradicionais, mas lutaram com a honra de verdadeiros protetores," relatou um comerciante que teve sua loja salva. A identidade dos invasores permanece um mistério, mas a bravura destes nobres inesperados já entrou para a história local.
+                    </p>
+                </article>
+
+                <hr style="border: 0; border-top: 4px solid var(--bleach-black); margin: 40px 0;">
+
+                <!-- NOTÍCIA 2: MISTÉRIO SUBTERRÂNEO -->
+                <article class="article-block">
+                    <div class="article-meta">
+                        <span class="diamond"></span>
+                        <span>História & Mistério</span>
+                        <span>Distrito 50</span>
+                    </div>
+                    <h2 class="article-title secondary">RUÍNAS REVELADAS: BIBLIOTECA SUBTERRÂNEA ENCONTRADA NO SUL</h2>
+                    <p>
+                        Um forte desabamento de terra nos arredores do Distrito 50 revelou um complexo de cavernas que esconde o que parece ser uma biblioteca colossal. Moradores que entraram nas ruínas antes da chegada das autoridades descreveram milhares de pergaminhos e tábuas de pedra com inscrições num idioma esquecido.
+                    </p>
+                    <br>
+                    <p>
+                        Especialistas amadores do Rukongai acreditam tratar-se de um arquivo de antes da própria fundação da Sociedade das Almas. No entanto, horas após a descoberta, guardas mascarados isolaram a área, alegando "risco de colapso estrutural". Testemunhas, porém, afirmam ter visto baús selados sendo levados na calada da noite sob forte escolta. O que estariam escondendo do nosso passado? O Arauto continuará a investigar.
+                    </p>
+                </article>
+
+                <!-- DESTAQUES DA SEMANA -->
+                <div class="border-top border-bottom" style="padding: 30px 0; margin: 40px 0;">
+                    <h3 style="font-family: var(--header-font); font-size: 2rem; margin-bottom: 20px; text-transform: uppercase;">Destaques da Semana</h3>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div>
+                            <div class="category-tag">Mistério</div>
+                            <h4 style="font-family: var(--header-font); font-size: 1.4rem; margin: 10px 0;">Academia Shinō Suspende Aulas</h4>
+                            <p style="font-size: 0.9rem;">As aulas na Academia foram suspensas por um período e retomadas naturalmente, sem qualquer explicação oficial. O boato que corre solto nos corredores é que estão encobrindo um grave incidente que aconteceu lá dentro. Alunos foram proibidos de falar sobre o assunto.</p>
+                        </div>
+                        <div>
+                            <div class="category-tag">Cultura</div>
+                            <h4 style="font-family: var(--header-font); font-size: 1.4rem; margin: 10px 0;">Trupe Teatral Chega ao Sul</h4>
+                            <p style="font-size: 0.9rem;">A famosa trupe itinerante 'Caminhantes do Vento' montou o seu palco no Distrito 15. As noites desta semana serão preenchidas com comédias, dramas e muitas gargalhadas para todas as famílias do Rukongai.</p>
+                            <p style="margin-top: 10px;">
+                                <!-- Link que abre o modal -->
+                                <a id="open-list-btn" class="link-destaque">
+                                    VER PROGRAMAÇÃO DE PEÇAS &rarr;
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="editorial-section">
+                    <h3 style="font-family: var(--header-font); text-transform: uppercase; border-left: 5px solid var(--ichigo-orange); padding-left: 15px;">Reflexão do Mês</h3>
+                    <blockquote style="font-style: italic; margin: 20px; font-size: 1.2rem; text-align: center; border-left: none;">
+                        "A tempestade pode arrancar as telhas de nossas casas, mas não pode quebrar as fundações quando elas são feitas das mãos que se dão em ajuda."
+                        <br><br>
+                        <small>- Pensador Anônimo do Norte</small>
+                    </blockquote>
+                </div>
+            </main>
+
+            <!-- SIDEBAR -->
+            <aside>
+                <!-- Boatos Leves -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Boatos da Taberna</h3>
+                    <p style="margin-bottom: 10px;"><strong>O Oficial e o Javali</strong></p>
+                    <p>Rola solta a história de um Ceifeiro de Almas engravatado que tentou inspecionar as florestas do Distrito 20. Acabou sendo encurralado por um javali gigante e teve que passar três horas em cima de uma árvore, derrubando todos os seus formulários oficias na lama até os lenhadores locais irem salvá-lo.</p>
+                </div>
+
+                <!-- Previsão Espiritual -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Previsão Espiritual</h3>
+                    <ul class="news-list">
+                        <li class="news-item">
+                            <h4>Áries</h4>
+                            <p style="font-size: 0.8rem;">Sua energia ígnea será fundamental para encorajar os outros. Lidere pelo exemplo, mas lembre-se de descansar a mente.</p>
+                        </li>
+                        <li class="news-item">
+                            <h4>Câncer</h4>
+                            <p style="font-size: 0.8rem;">Seu instinto de proteção estará no auge. Ofereça abrigo ou apenas um ombro amigo para aqueles que estão agitados com os eventos recentes.</p>
+                        </li>
+                        <li class="news-item">
+                            <h4>Libra</h4>
+                            <p style="font-size: 0.8rem;">Em meio à confusão, você será o ponto de equilíbrio. Use suas palavras para acalmar discussões sobre quem deve liderar a limpeza.</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div style="background: var(--bleach-black); color: white; padding: 20px; text-align: center; margin-top: 20px;">
+                    <h4 style="font-family: var(--header-font); text-transform: uppercase; color: var(--ichigo-orange);">Utilidade Pública</h4>
+                    <p style="font-size: 0.8rem; margin-top: 10px;">Precisamos de voluntários com conhecimentos básicos em carpintaria para ajudar na reconstrução da Ponte Norte. Apresentem-se ao Sr. Kenji no Distrito 11.</p>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="squad-symbol">真</div>
+                <h3>Sobre Nós</h3>
+                <p>O Arauto Espiritual: Documentando a resiliência e a verdade da Sociedade das Almas. Feito pelo povo, para o povo.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Arquivo Público</h3>
+                <ul class="news-list" style="border: none;">
+                    <li><a href="#">Lista de Voluntariado</a></li>
+                    <li><a href="#">Doações de Mantimentos</a></li>
+                    <li><a href="#">Relatórios de Danos</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Apoie a Reconstrução</h3>
+                <p>Nesta edição, todo o Kan arrecadado será destinado à compra de bandagens e alimentos para o Norte.</p>
+                <a href="#" class="donate-btn" onclick="alert('Sua doação foi encaminhada para os fundos de auxílio do Norte. Obrigado! (Simulação)'); return false;">
+                    DOAR KAN &rarr;
+                </a>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 40px; font-size: 0.8rem; opacity: 0.6;">
+            &copy; Imprensa Livre de Rukongai. A Verdade e a Solidariedade acima de tudo.
+        </div>
+    </footer>
+
+    <!-- MODAL DE PROGRAMAÇÃO TEATRAL -->
+    <div id="modal-lista" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-modal" id="close-list-btn">&times;</button>
+            <div class="list-header">
+                <h2>TRUPE CAMINHANTES DO VENTO</h2>
+                <p>PROGRAMAÇÃO DE PEÇAS - DISTRITO 15</p>
+            </div>
+            
+            <ul class="item-list">
+                <li>
+                    <span>"O Nobre Desastrado e o Cão"</span>
+                    <span class="item-status" style="color: var(--ichigo-orange);">COMÉDIA (HOJE)</span>
+                </li>
+                <li>
+                    <span>"Lágrimas Sob a Cerejeira"</span>
+                    <span class="item-status" style="color: #5bc0de;">DRAMA ROMÂNTICO (AMANHÃ)</span>
+                </li>
+                <li>
+                    <span>"A Grande Batalha dos Bolinhos"</span>
+                    <span class="item-status" style="color: #5cb85c;">INFANTIL (SÁBADO)</span>
+                </li>
+                <li>
+                    <span>"O Fantasma Assustado"</span>
+                    <span class="item-status" style="color: #8a6d3b;">COMÉDIA DE TERROR (DOMINGO)</span>
+                </li>
+            </ul>
+            
+            <div style="margin-top: 20px; border-top: 2px solid black; padding-top: 10px; font-size: 0.8rem;">
+                <p><strong>ATENÇÃO:</strong> A entrada é livre, mas pedimos que tragam as vossas próprias almofadas para sentar no chão. Aceitam-se doações de alimentos no final de cada espetáculo.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Data Atual
+            const dateElement = document.getElementById('current-date');
+            const now = new Date();
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            dateElement.textContent = now.toLocaleDateString('pt-BR', options).toUpperCase();
+
+            // Lógica do Modal (Mini Janela)
+            const modal = document.getElementById('modal-lista');
+            const openBtn = document.getElementById('open-list-btn');
+            const closeBtn = document.getElementById('close-list-btn');
+
+            if(openBtn) {
+                openBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    modal.classList.add('active');
+                });
+            }
+
+            if(closeBtn) {
+                closeBtn.addEventListener('click', () => {
+                    modal.classList.remove('active');
+                });
+            }
+
+            // Fechar ao clicar fora da janela
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
